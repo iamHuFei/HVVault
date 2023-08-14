@@ -41,6 +41,18 @@ domestic   # yaml列表
 - 绿盟SAS堡垒机 命令执行 2023HVV /webconf/Exec/index?cmd=
 - 绿盟SAS堡垒机 文件读取 2023HVV /webconf/GetFile/index?path=
 
-- 深信服应用交付管理系统 命令执行 2023HVV
-- 深信服应用交付报表系统 文件读取 2023HVV
+- 网神SecGate3600 文件上传 2023HVV /?g=obj_app_upfile
+
+- 深信服应用交付管理系统 命令执行 2023HVV /rep/login
+- 深信服应用交付报表系统 文件读取 2023HVV /report/download.php?pdf=
+
+- 泛微EOffice 文件上传 2023HVV /webservice/upload.php
+
+- 用友移动系统管理 文件上传 2023HVV /maportal/appmanager/uploadApk.do?pk_obj=
+
+- 广联达Linkworks办公OA SQL注入 /Webservice/IM/Config/ConfigService.asmx/GetIMDictionary
+- MilesightVPN 文件读取 2023HVV /../etc/passwd
+- 企业微信 信息泄露 2023HVV /cgi-bin/gateway/agentinfo
+- 金盘微信管理平台 账户密码泄露 2023HVV /admin/weichatcfg/getsysteminfo
+- 企望制造ERP系统 SQL注入+RCE 2023HVV  /mainFunctions/comboxstore.action
 ```
