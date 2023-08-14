@@ -1,0 +1,32 @@
+id: NC-RCE-monitorservlet
+
+info:
+  name: NC-RCE-monitorservlet
+  author: hufei
+  severity: critical
+  description:
+    用友 NC bsh.servlet.BshServlet 存在远程命令执行漏洞，通过BeanShell 执行远程命令获取服务器权限
+  reference:
+    https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/e48ba246197315d26acb2fda1ecad4cb420df633/docs/wiki/oa/%E7%94%A8%E5%8F%8BOA/%E7%94%A8%E5%8F%8B%20NC%20bsh.servlet.BshServlet%20%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E.md
+  metadata:
+    max-request: 3
+    fofa-query: app="用友-NC-Cloud"
+    hunter-query:
+    verified: true
+  tags: 2022,NC,rce
+
+
+http:
+  - raw:
+      - |
+        GET /servlet/~ic/bsh.servlet.BshServlet HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (Windows; U; Windows 95) AppleWebKit/531.18.6 (KHTML, like Gecko) Version/4.0.4 Safari/531.18.6
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+        Connection: close
+    matchers:
+      - type: word
+        words:
+          - "BeanShell Test Servlet"
+        part: body

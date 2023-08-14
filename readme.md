@@ -37,6 +37,9 @@ domestic   # yaml列表
 - 海康威视IVMS8700 文件上传 2023HVV /eps/resourceOperations/upload.action
 - 海康威视IVMS8700 文件下载 2023HVV /eps/api/triggerSnapshot/download?token=
 
+- 金蝶云星空 命令执行 2023 /Kingdee.BOS.ServiceFacade.ServicesStub.DevReportService.GetBusinessObjectData.common.kdsvc
+- 金蝶云星空 文件读取 2023 /CommonFileServer/c%3A%2Fwindows%2Fwin.ini
+
 - 绿盟SAS堡垒机 登录绕过 2023HVV /api/virtual/home/status?cat=
 - 绿盟SAS堡垒机 命令执行 2023HVV /webconf/Exec/index?cmd=
 - 绿盟SAS堡垒机 文件读取 2023HVV /webconf/GetFile/index?path=
@@ -48,6 +51,10 @@ domestic   # yaml列表
 
 - 泛微EOffice 文件上传 2023HVV /webservice/upload.php
 
+- 用友NC 命令执行 2022 /servlet/~ic/bsh.servlet.BshServlet
+- 用友NC 文件上传 2022 /aim/equipmap/accept.jsp
+- 用友NC 文件读取 2022  /NCFindWeb?service=IPreAlertConfigService&filename=
+- 用友NC-Cloud 命令执行 CNVD-C-2023-76801 /uapjs/jsinvoke/?action=invoke
 - 用友移动系统管理 文件上传 2023HVV /maportal/appmanager/uploadApk.do?pk_obj=
 
 - 广联达Linkworks办公OA SQL注入 /Webservice/IM/Config/ConfigService.asmx/GetIMDictionary
@@ -55,4 +62,6 @@ domestic   # yaml列表
 - 企业微信 信息泄露 2023HVV /cgi-bin/gateway/agentinfo
 - 金盘微信管理平台 账户密码泄露 2023HVV /admin/weichatcfg/getsysteminfo
 - 企望制造ERP系统 SQL注入+RCE 2023HVV  /mainFunctions/comboxstore.action
+
+- 
 ```

