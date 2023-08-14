@@ -1,36 +1,46 @@
+```
+   __ ___   ___   __          ____ 
+  / // / | / / | / /__ ___ __/ / /_
+ / _  /| |/ /| |/ / _ `/ // / / __/
+/_//_/ |___/ |___/\_,_/\_,_/_/\__/ 
+                                   
+```
 <h4 align="center">基于Nuclei扫描模板的POC仓库集成</h4>
 
-
 ### 项目说明
-- 需求：借助2023HVV之机梳理【护网高利用率POC】并集成Nuclei模板仓库，针对网上同一资产漏洞一键检测工具参次不齐问题。
-- 学习：
+借2023HVV之机梳理【护网高利用率POC】并集成Nuclei模板仓库，针对网上同一资产漏洞一键检测工具参次不齐问题。
+
+- 免责：文库POC以及测试目标只允许在目标授权的情况下进行测试，利用此仓库造成的任何直接或者间接的后果及损失，均由使用者本人负责，作者不为此承担任何责任。若不同意以上警告信息请立即退出使用。
+- 开源：我认为开源才是最好的交流方式，仓库的POC都是公开可以任意下载的。希望能帮助到各位学习与测试。希望大家可以通过提出建设性意见或者赞助项目来给予我更多更新的动力～
 - 参考：
-  - https://github.com/PeiQi0/PeiQi-WIKI-Book
-  - https://nuclei.projectdiscovery.io/
+  - 漏洞来源：https://github.com/PeiQi0/PeiQi-WIKI-Book
+  - 模板说明：https://nuclei.projectdiscovery.io/
 
 ### 索引相关
 ```
-- 畅捷通T+ 命令执行 GetStoreWarehouseByStore
-- 畅捷通T+ 文件上传 Upload.aspx?preload=1
+targets    # fofa导出的测试资产列表
+domestic   # yaml列表
+- 畅捷通T+ 命令执行 QVD-2023-13615 /tplus/ajaxpro/Ufida.T.CodeBehind._PriorityLevel,App_Code.ashx?method=GetStoreWarehouseByStore
+- 畅捷通T+ 文件上传 CNVD-2022-60632 /tplus/SM/SetupAccount/Upload.aspx?preload=1
 
-- 大华智慧园区 账户密码泄露 getUserInfoByUserName
-- 大华智慧园区 SQL注入 pageJson
-- 大华智慧园区 文件上传 publishing
-- 大华智慧园区 文件上传 addImgIco CVE-2023-3836
+- 大华智慧园区 账户密码泄露 2023HVV /admin/user_getUserInfoByUserName.action
+- 大华智慧园区 SQL注入 2023HVV /portal/services/carQuery/getFaceCapture/searchJson/
+- 大华智慧园区 文件上传 2023HVV /publishing/publishing/material/file/video
+- 大华智慧园区 文件上传 CVE-2023-3836 /emap/devicePoint_addImgIco?hasSubsystem=true
 
-- 海康威视综合安防 命令执行 keepAlive
-- 海康威视综合安防 命令执行 applyCT
-- 海康威视综合安防 文件上传 files
-- 海康威视综合安防 文件上传 report
-- 海康威视综合安防 文件读取 env
-- 海康威视IVMS8700 文件上传 upload?token=
-- 海康威视IVMS8700 文件上传 upload.action
-- 海康威视IVMS8700 文件下载 download.token
+- 海康威视综合安防 命令执行 --- /bic/ssoService/v1/applyCT
+- 海康威视综合安防 命令执行 --- /bic/ssoService/v1/keepAlive
+- 海康威视综合安防 文件上传 2023HVV /center/api/files;.png
+- 海康威视综合安防 文件上传 2023HVV /svm/api/external/report  # 待验证
+- 海康威视综合安防 文件读取 2023HVV /artemis-portal/artemis/env
+- 海康威视IVMS8700 文件上传 2023HVV /eps/api/resourceOperations/upload?token=
+- 海康威视IVMS8700 文件上传 2023HVV /eps/resourceOperations/upload.action
+- 海康威视IVMS8700 文件下载 2023HVV /eps/api/triggerSnapshot/download?token=
 
-- 绿盟SAS堡垒机 登录绕过 /api/virtual/home/status?cat=
-- 绿盟SAS堡垒机 命令执行 /webconf/Exec/index?cmd=
-- 绿盟SAS堡垒机 文件读取 /webconf/GetFile/index?path=
+- 绿盟SAS堡垒机 登录绕过 2023HVV /api/virtual/home/status?cat=
+- 绿盟SAS堡垒机 命令执行 2023HVV /webconf/Exec/index?cmd=
+- 绿盟SAS堡垒机 文件读取 2023HVV /webconf/GetFile/index?path=
 
-- 深信服应用交付管理系统 命令执行 login
-- 深信服应用交付报表系统 文件读取 download
+- 深信服应用交付管理系统 命令执行 2023HVV
+- 深信服应用交付报表系统 文件读取 2023HVV
 ```

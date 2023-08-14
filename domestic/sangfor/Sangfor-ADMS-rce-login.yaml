@@ -9,8 +9,8 @@ info:
   metadata:
     max-request: 1
     fofa-query: fid="iaytNA57019/kADk8Nev7g=="
+    hunter-query:
     verified: true
-    product: Sangfor-ADMS
   tags: 2023,HVV,Sangfor-ADMS
 
 http:

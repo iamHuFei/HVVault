@@ -5,12 +5,15 @@ info:
   author: hufei
   severity: critical
   description: |
-     绿盟堡垒机存在任意文件读取漏洞
+    绿盟堡垒机存在任意文件读取漏洞
   reference:
+    https://mp.weixin.qq.com/s/qHPo0noFTvJoEcor00qtDg
   metadata:
     max-request: 3
     fofa-query: title=="NSFOCUS&nbsp;SAS[H]"
-  tags: Nsfocus-SAS,file,read,intrusive
+    hunter-query: app.name="NSFOCUS 绿盟 SAS"
+    verified: true
+  tags: 2023,HVV,Nsfocus-SAS,login-bypass
 
 
 requests:

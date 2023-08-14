@@ -1,17 +1,19 @@
 id: dahua-WPMS-read
+
 info:
   name: dahua-WPMS
   author: hufei
   severity: high
   description: |
-     获取登录用户以及加密后的密码
+    获取登录用户以及md5加密后的密码
   reference:
+    https://github.com/PeiQi0/PeiQi-WIKI-Book/tree/main/docs/wiki/iot/%E5%A4%A7%E5%8D%8E
   metadata:
     max-request: 1
     fofa-query: app="dahua-智慧园区综合管理平台"
+    hunter-query: app.name="Dahua 大华 智慧园区管理平台"
     verified: true
-    product: dahua-WPMS
-  tags: 2023,HVV,dahua,SQL
+  tags: 2023,HVV,dahua,read
 
 requests:
   - method: GET

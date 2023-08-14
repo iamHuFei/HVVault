@@ -12,7 +12,8 @@ info:
     max-request: 2
     fofa-query: app="HIKVISION-综合安防管理平台"
     hunter-query: web.title=="综合安防管理平台
-  tags: HIKVISION-iSecure-Center,fileupload,rce,intrusive
+    verified: true
+  tags: HIKVISION-iSecure-Center,fileupload
 
 variables:
   str1: '{{rand_base(6)}}'

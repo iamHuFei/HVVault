@@ -7,14 +7,13 @@ info:
   description: |
      绿盟 SAS堡垒机 Exec 远程命令执行漏洞
   reference:
+    https://mp.weixin.qq.com/s/qHPo0noFTvJoEcor00qtDg
   metadata:
     max-request: 3
-    fofa-query: body=title=="NSFOCUS&nbsp;SAS[H]"
-  tags: Nsfocus-SAS,fileupload,rce,intrusive
-
-variables:
-  dns: "{{interactsh-url}}"
-  cmd: "wget%20{{dns}}"
+    fofa-query: title=="NSFOCUS&nbsp;SAS[H]"
+    hunter-query: app.name="NSFOCUS 绿盟 SAS"
+    verified: true
+  tags: 2023,HVV,Nsfocus-SAS,login-bypass
 
 requests:
   - method: GET

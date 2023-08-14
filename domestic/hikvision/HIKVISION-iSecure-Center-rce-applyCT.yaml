@@ -6,12 +6,13 @@ info:
   severity: high
   description: |
   reference:
-    - https://github.com/PeiQi0/PeiQi-WIKI-Book
+    - https://github.com/PeiQi0/PeiQi-WIKI-Book/tree/e48ba246197315d26acb2fda1ecad4cb420df633/docs/wiki/iot/HIKVISION
   metadata:
     max-request: 2
     fofa-query: app="HIKVISION-综合安防管理平台"
     hunter-query: web.title=="综合安防管理平台
-  tags: HIKVISION-iSecure-Center,fileupload,rce,intrusive
+    verified: true
+  tags: HIKVISION-iSecure-Center,rce
 
 http:
   - raw:

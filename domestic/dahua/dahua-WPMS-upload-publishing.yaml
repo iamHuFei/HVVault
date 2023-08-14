@@ -1,16 +1,19 @@
-id: dahua-WPMS
+id: dahua-WPMS-upload-vidio
+
 info:
-  name: dahua-WPMS
+  name: dahua-WPMS-upload-vidio
   author: hufei
   severity: high
   description: |
+    大华 智慧园区综合管理平台 video 接口存在任意文件上传漏洞，攻击者通过漏洞可以上传任意文件到服务器中，控制服务器权限
   reference:
+    https://github.com/PeiQi0/PeiQi-WIKI-Book/tree/main/docs/wiki/iot/%E5%A4%A7%E5%8D%8E
   metadata:
     max-request: 1
     fofa-query: app="dahua-智慧园区综合管理平台"
+    hunter-query: app.name="Dahua 大华 智慧园区管理平台"
     verified: true
-    product: dahua-WPMS
-  tags: 2023,HVV,dahua
+  tags: 2023,HVV,dahua,CVE
 
 http:
   - raw:
