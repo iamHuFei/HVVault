@@ -42,6 +42,9 @@
 - 大华智慧园区 文件上传 2023HVV /publishing/publishing/material/file/video
 - 大华智慧园区 文件上传 CVE-2023-3836 /emap/devicePoint_addImgIco?hasSubsystem=true
 
+- 亿赛通-电子文档安全管理系统 文件上传 2023HVV /CDGServer3/UploadFileFromClientServiceForClient?
+- 亿赛通-电子文档安全管理系统 命令执行 CNVD-2022-64951 /solr/admin/cores
+
 - 海康威视综合安防 命令执行 --- /bic/ssoService/v1/applyCT
 - 海康威视综合安防 命令执行 --- /bic/ssoService/v1/keepAlive
 - 海康威视综合安防 文件上传 2023HVV /center/api/files;.png
