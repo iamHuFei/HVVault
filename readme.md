@@ -67,6 +67,8 @@
 - 深信服应用交付报表系统 文件读取 2023HVV /report/download.php?pdf=
 - 深信服数据中心 XXE 2023HVV /src/sangforindex
 
+- 致远致远OA-M1Server 命令执行 2023HVV /esn_mobile_pns/service/userTokenService
+
 - 泛微EOffice 文件上传 2023HVV /webservice/upload.php
 
 - 用友NC 命令执行 2022 /servlet/~ic/bsh.servlet.BshServlet
@@ -74,6 +76,7 @@
 - 用友NC 文件读取 2022  /NCFindWeb?service=IPreAlertConfigService&filename=
 - 用友NC-Cloud    命令执行 CNVD-C-2023-76801 /uapjs/jsinvoke/?action=invoke
 - 用友移动系统管理 文件上传 2023HVV /maportal/appmanager/uploadApk.do?pk_obj=
+
 
 信息泄露
 - 2023HVV MilesightVPN      /../etc/passwd
@@ -83,5 +86,6 @@
 - 2023HVV 新开普前置服务管理平台  /service_transport/service.action
 - 2023HVV 企望制造ERP系统        /mainFunctions/comboxstore.action
 其他
+- 2023HVV 明源云ERP 文件上传 /myunke/ApiUpdateTool/ApiUpdate.ashx?apiocode=a
 - 2023HVV 广联达Linkworks SQL注入     /Webservice/IM/Config/ConfigService.asmx/GetIMDictionary
 ```
