@@ -86,9 +86,12 @@
 命令执行
 - 2023HVV 新开普前置服务管理平台  /service_transport/service.action
 - 2023HVV 企望制造ERP系统        /mainFunctions/comboxstore.action
-其他
-- 2023HVV 明源云ERP 文件上传 /myunke/ApiUpdateTool/ApiUpdate.ashx?apiocode=a
-- 2023HVV 广联达Linkworks SQL注入     /Webservice/IM/Config/ConfigService.asmx/GetIMDictionary
+文件上传
+- 2023HVV 明源云ERP /myunke/ApiUpdateTool/ApiUpdate.ashx?apiocode=a
+SQL注入
+- 2023HVV 广联达Linkworks /Webservice/IM/Config/ConfigService.asmx/GetIMDictionary
+- 2023HVV 中远麒麟堡垒机 /admin.php?controller=admin_commonuser
+- 2023HVV 红帆ioffice   /iOffice/prg/set/wss/udfmr.asmx?op=GetEmpSearch
 ```
 ### 0x02. 编写规范
 1. 所有PoC命名为**小写**，且**不允许**存在下划线"_"等方式，空格用"-"做替换。
