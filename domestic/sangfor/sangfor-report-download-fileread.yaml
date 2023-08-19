@@ -1,6 +1,6 @@
-id: Sangfor-ADRS-read-download
+id: sangfor-report-download-fileread
 info:
-  name: Sangfor-ADRS-read-download
+  name: sangfor-report-download-fileread
   author: hufei
   severity: high
   description: |
@@ -11,7 +11,7 @@ info:
     fofa-query: app="SANGFOR-应用交付报表系统"
     hunter-query: app.name="SANGFOR 深信服应用交付报表系统"
     verified: true
-  tags: 2023,HVV,Sangfor-ADMS
+  tags: 2023,HVV,Sangfor,fileread
 
 http:
   - raw:
