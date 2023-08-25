@@ -1,31 +1,20 @@
-<h4>基于Nuclei扫描模板的POC仓库集成</h4>
+<h1 align="center">
+  <br>
+  <a href="https://nuclei.projectdiscovery.io"><img src="static/nuclei-logo.png" width="200px" alt="Nuclei"></a>
+</h1>
 
-```
-   __ ___   ___   __          ____ 
-  / // / | / / | / /__ ___ __/ / /_
- / _  /| |/ /| |/ / _ `/ // / / __/ 2023.HVV
-/_//_/ |___/ |___/\_,_/\_,_/_/\__/  BY.HUFEI
-                                   
-```
+<h4 align="center">基 于 Nuclei 扫 描 模 板 的 POC 仓 库 集 成</h4>
 
 <p align="center">
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-_red.svg"></a>
 <a href="https://github.com/asaotomo/fofamap/issues"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a>
+
 </p>
 
 ### 0x00. 项目说明
-借2023HVV之机梳理【护网高利用率POC】并集成Nuclei仓库，针对单资产漏洞一键检测工具参次不齐问题。
-具体参考：
-- [PeiQi-WIKI-Book](https://github.com/PeiQi0/PeiQi-WIKI-Book)
-- [Ibaiw-2023Hvv](https://github.com/ibaiw/2023Hvv)
-- [OA - EXPTOOL 漏洞利用框架](https://github.com/LittleBear4/OA-EXPTOOL)
+- 2023.08.10 2023HVV期间出现的可以验证的漏洞POC
+- 2023.09.10 计划完成出现漏洞较多的产品POC集成
 
-
-<h4 align="center">*************** 免责声明 ***************</h4>
-<p align="center">1. 仅用于技术交流，目的是向相关安全人员展示漏洞利用方式，以便更好地提高网络安全意识和技术水平。</p>
-<p align="center">2. 任何人不得利用本仓库进行非法攻击和侵犯他人的隐私和财产权利。一旦发生任何违法行为，责任自负。</p>
-<p align="center">3. 本仓库仅用于授权测试，任何未经授权的测试均属于非法行为。请在法律许可范围内使用。</p>
-<p align="center">4. 作者对使用此仓库导致的任何直接或间接损失不承担任何责任。使用此仓库的风险由使用者自行承担。</p>
 
 ### 0x01. 索引相关
 ```
@@ -94,6 +83,7 @@ SQL注入
 - 2023HVV 红帆ioffice   /iOffice/prg/set/wss/udfmr.asmx?op=GetEmpSearch
 ```
 ### 0x02. 编写规范
+**规范说明**
 1. 所有PoC命名为**小写**，且**不允许**存在下划线"_"等方式，空格用"-"做替换。
 2. PoC id命名规范为：***厂商名称-产品名称-漏洞路径/影响版本/-漏洞类型\*** , 例如 `fanwei-ecology-bsh-servlet-bshservlet-rce` ，`fanwei` = `厂商名称` ，`ecology` = `产品名称` ，`bsh-servlet-bshservlet` = `漏洞路径` ，`rce` = `漏洞类型` 
 3. 为避免触发Waf，PoC编写过程中涉及到上传文件或者执行命令需要验证的情况下，尽量做**无害化**处理，例如上传的文件后缀尽量选择为 `txt`  内容为正常随机字符串，命令执行尽量避免 `whoami` 等一些高危命令。
@@ -125,3 +115,11 @@ SQL注入
 | 任意用户登录 | userlogin           |
 | 目录遍历     | dirlist             |
 | 重置密码     | reset-password      |
+
+
+
+<h4 align="center">免责声明</h4>
+<p align="center">1. 仅用于技术交流，目的是向相关安全人员展示漏洞利用方式，以便更好地提高网络安全意识和技术水平。</p>
+<p align="center">2. 任何人不得利用本仓库进行非法攻击和侵犯他人的隐私和财产权利。一旦发生任何违法行为，责任自负。</p>
+<p align="center">3. 本仓库仅用于授权测试，任何未经授权的测试均属于非法行为。请在法律许可范围内使用。</p>
+<p align="center">4. 作者对使用此仓库导致的任何直接或间接损失不承担任何责任。使用此仓库的风险由使用者自行承担。</p>
