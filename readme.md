@@ -1,6 +1,7 @@
 <h1 align="center">
   <br>
-  <a href="https://nuclei.projectdiscovery.io"><img src="static/nuclei-logo.png" width="200px" alt="Nuclei"></a>
+  <a href="https://mintlify.s3-us-west-1.amazonaws.com/nuclei/logo/light.png"><img src="
+https://mintlify.s3-us-west-1.amazonaws.com/nuclei/logo/light.png" width="200px" alt="Nuclei"></a>
 </h1>
 
 <h4 align="center">基 于 Nuclei 扫 描 模 板 的 POC 仓 库 集 成</h4>

