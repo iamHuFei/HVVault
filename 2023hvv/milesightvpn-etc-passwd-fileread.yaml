@@ -24,10 +24,6 @@ http:
         Content-Type: application/x-www-form-urlencoded
 
     matchers:
-      - type: word
-        part: body
-        words:
-          - 'root:x'
-      - type: status
-        status:
-          - 200
+      - type: dsl
+        dsl:
+          - "status_code == 200 && contains(body, 'root')"

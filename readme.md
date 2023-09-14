@@ -1,17 +1,15 @@
-<h1 align="center">
-  <br>
-  <img src="https://mintlify.s3-us-west-1.amazonaws.com/nuclei/logo/light.png" width="200px" alt="Nuclei"></a>
-</h1>
+![light.png](docs%2Flight.png)
 <h4 align="center">基 于 Nuclei 扫 描 模 板 的 POC 仓 库 集 成</h4>
 <p align="center">
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-_red.svg"></a>
 <a href="https://github.com/asaotomo/fofamap/issues"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a>
 </p>
 
+
 ### 0x00. 项目说明
 - 2023.08.10 2023HVV期间出现的可以验证的漏洞POC；
-- 2023.09.10 计划参照佩奇文库已公开POC完成POC仓库集成；
-- 2023.09.07 目前支持74个护网漏洞验证：**[点击查看支持清单](支持清单.md)** 。
+- 0000.00.00 计划参照佩奇文库已公开POC完成POC仓库集成；
+- 2023.09.15 目前支持81个护网漏洞验证：**[点击查看支持清单](支持清单.md)** 。
 
 
 ### 0x01. 编写规范
@@ -49,9 +47,12 @@
 | 重置密码    | reset-password      |
 
 
-### 0x02. 索引相关
+### 0x02. 免责声明
 <h4 align="center">免责声明</h4>
 <p align="center">1. 仅用于技术交流，目的是向相关安全人员展示漏洞利用方式，以便更好地提高网络安全意识和技术水平。</p>
 <p align="center">2. 任何人不得利用本仓库进行非法攻击和侵犯他人的隐私和财产权利。一旦发生任何违法行为，责任自负。</p>
 <p align="center">3. 本仓库仅用于授权测试，任何未经授权的测试均属于非法行为。请在法律许可范围内使用。</p>
 <p align="center">4. 作者对使用此仓库导致的任何直接或间接损失不承担任何责任。使用此仓库的风险由使用者自行承担。</p>
+
+### 0x03. 联系方式
+![wx.png](docs%2Fwx.png)
