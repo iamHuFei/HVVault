@@ -54,3 +54,6 @@ http:
       - type: word
         words:
           - 'uid='
+          - 'gid='
+          - 'groups='
+        condition: and

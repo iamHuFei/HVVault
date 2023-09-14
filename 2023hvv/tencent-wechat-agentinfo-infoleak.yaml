@@ -25,3 +25,5 @@ requests:
         words:
           - "corpid"
           - "Secret"
+          - "strcorpid"
+        condition: and

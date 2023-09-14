@@ -25,3 +25,4 @@ requests:
         words:
           - "username"
           - "password"
+        condition: and

