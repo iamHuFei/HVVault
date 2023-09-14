@@ -40,3 +40,6 @@ http:
           - 'status_code_1 == 200'
           - 'contains(body_1, "success")'
           - 'contains(body_2, "uid=")'
+          - 'contains(body_2, "gid=")'
+          - 'contains(body_2, "groups=")'
+        condition: and

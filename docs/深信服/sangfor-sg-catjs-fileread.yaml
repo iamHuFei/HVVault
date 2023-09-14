@@ -40,3 +40,4 @@ http:
           - "root"
           - "bin"
         part: body
+        condition: and

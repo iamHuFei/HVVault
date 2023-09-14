@@ -26,5 +26,6 @@ http:
       - type: word
         part: body
         words:
-          - "root"
-          - "dev"
+          - "/dev"
+          - "Filesystem"
+        condition: and

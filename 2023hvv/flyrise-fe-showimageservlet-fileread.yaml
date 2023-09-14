@@ -24,5 +24,9 @@ requests:
       - type: word
         part: body
         words:
-          - "jdbc"
-          - "fe.db"
+          - "jdbc.user"
+          - "jdbc.password"
+        condition: and
+      - type: status
+        status:
+          - 200
