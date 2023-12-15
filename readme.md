@@ -1,25 +1,9 @@
-
-```
-                     __     _       ____       _ ____    _ 
-   ____  __  _______/ /__  (_) __  / __ \___  (_) __ \  (_)
-  / __ \/ / / / ___/ / _ \/ /_/ /_/ /_/ / _ \/ / / / / / / 
- / / / / /_/ / /__/ /  __/ /_  __/ ____/  __/ / /_/ / / /  
-/_/ /_/\__,_/\___/_/\___/_/ /_/ /_/    \___/_/\___\_\/_/      
-                                                                    
-```
-
-<h4 align="center">HVVault - 基 于 Nuclei 扫 描 模 板 的 POC 仓 库 集 成</h4>
-<p align="center">
-<img src="https://img.shields.io/github/stars/iamHuFei/HVVault"></a>
-<img src="https://img.shields.io/github/forks/iamHuFei/HVVault?color=red"></a>
-<img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a>
-</p>
-
+<img src="https://socialify.git.ci/iamHuFei/HVVault/image?description=1&font=KoHo&forks=1&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto" alt="HVVault" width="640" height="320" />
 
 ### 0x00. 项目说明
 - 2023.08.10 2023HVV期间出现的可以验证的漏洞POC；
 - 2023.09.15 目前支持81个护网漏洞验证。
-- 2023.12.15 逐步支持PeiQi文库poc化。
+- 2023.12.15 逐步支持PeiQi文库poc化，目前支持113个POC。
 
 
 ### 0x01. 免责声明
