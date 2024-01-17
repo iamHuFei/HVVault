@@ -27,6 +27,6 @@ http:
       - type: word
         part: body
         words:
-          - "/dev"
+          - "/webdev"
           - "Filesystem"
         condition: and

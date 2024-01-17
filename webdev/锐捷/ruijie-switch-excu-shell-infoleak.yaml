@@ -13,7 +13,7 @@ http:
     - |
       GET /EXCU_SHELL HTTP/1.1
       Host: {{Hostname}}
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.2852.74 Safari/537.36
+      User-Agent: Moziilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.2852.74 Safari/537.36
       Accept-Encoding: gzip, deflate
       Accept: */*
       Connection: close
