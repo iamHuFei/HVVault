@@ -3,14 +3,17 @@
 **Title:**
 magicflu-mailupdate-jsp-fileupload
 
+**NAME OF AFFECTED PRODUCT(S):**
+Magicflue
+
 **Description:**
-An attacker can exploit this vulnerability by sending a crafted HTTP request to the '/magicflu/html/mail/mailupdate.jsp' endpoint, manipulating the 'messageid' parameter to traverse directories and upload a malicious file (e.g., a web shell) with a randomized filename. Subsequently, the attacker can validate the successful upload by sending a request to the '/magicflu/{{name}}.txt' endpoint, where {{name}} is the randomly generated filename.
+File Upload vulnerability in magicflue v.7.0 and before allows a remote attacker to execute arbitrary code via a crafted request to the messageid parameter of the mail/mailupdate.jsp endpoint.
 
 **Vendor Contact:**
 https://www.magicflu.com/
 
 **Affected Versions:**
-Unknown
+magicflue v.7.0 and before
 
 **Mitigations:**
 Wait for the vendor to fix it
